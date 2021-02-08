@@ -1,0 +1,59 @@
+
+body {
+    background-color: rgb(136, 121, 38);
+}
+
+
+.header {
+    margin:0;
+    float: left;
+    overflow: hidden;
+    list-style-type: none;
+    background-color: rgb(54, 50, 146);
+    width:100% ;
+    height:50px ;
+
+}
+
+.header a {
+    color: white;
+    padding: 30px;
+}
+
+.header a:hover{
+    background-color: #333;
+    color: white;
+}
+
+.header li {
+    float: left;
+    padding: 10px;
+}
+
+
+.contentBar {
+    background-color: rgb(148 132 30);
+    border:solid;
+    height: 100px;
+    margin-top: 10px;
+}
+
+
+.contentBar div{ 
+    height: 100%;
+    width: 20%;
+    
+    float: left;
+
+}
+
+.contentBar  p {
+    text-align: center;
+    font-style: italic;
+}
+
+.BookImage {
+    height: 100px;
+    width: 100px;
+
+}
