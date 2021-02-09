@@ -30,10 +30,10 @@ class Author(models.Model):
 
 class Books(models.Model):
     title = models.CharField(max_length = 300)
-    Author = models.ForeignKey(Author,on_delete = models.CASCADE)
+    Author = models.ManyToManyField(Author)
     description = models.TextField()
     image  = models.ImageField(blank=True)
-    Genre = models.ForeignKey(Genre,on_delete = models.CASCADE)
+    Genre = models.ManyToManyField(Genre)
     
     
     
