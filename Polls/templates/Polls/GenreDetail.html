@@ -1,0 +1,20 @@
+{% extends 'Polls/Blocks/BaseBlock.html' %}
+
+
+{% block title %}
+  {{ genre.title }} -  {{ block.super }}
+{% endblock %}
+
+
+
+{% block content %}
+
+  <h1>Книги жанра : {{ genre.title }}</h1>
+
+    {% for gb in genreBook %}
+
+    <h1>{{ gb.title }}</h1>
+
+    {% endfor %}
+
+{% endblock %}

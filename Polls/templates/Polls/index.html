@@ -4,6 +4,11 @@
 
 {% block content %}
 
-<h1>Куку</h1>
+{% for genre in genres %}
+
+  <a href="{{ genre.get_absolute_url }}"><h1>{{genre.title}}</h1></a>
+
+
+{% endfor %}
 
 {% endblock %}
