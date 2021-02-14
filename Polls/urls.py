@@ -9,6 +9,9 @@ urlpatterns = [
     path('Wellcome/',WelcomePage , name = "HomePage"),
     path('Book/',BooksPage, name = "BooksPage"),
     path("Genre/<str:slug>",GenreDetail,name = "GenreDetail"),
+    path("Book/<slug:BookSlug>",getCurrentBookPage, name = ""),
+    path("Book/<slug:BookSlug>/del/",DeleteBook, name = ""),
+    path("Book/<int:pk>/update/",UpdateBookView.as_view(), name = ""),
 
 
 

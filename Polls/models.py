@@ -7,7 +7,7 @@ from django.shortcuts import reverse
 
 class Genre(models.Model):
     title = models.CharField(max_length = 300)
-    slug = models.SlugField(max_length = 50,unique=True)
+    slug = models.SlugField(null=True , blank=True , max_length = 50,unique=True)
 
 
     def get_absolute_url(self):
@@ -41,6 +41,7 @@ class Book(models.Model):
     title = models.CharField(max_length = 300)
     Author = models.ManyToManyField(Author,blank = True,related_name = 'authors')
     description = models.TextField(blank = True,db_index = True)
+    slug = models.SlugField(null=True,blank = True)
     image  = models.ImageField(blank=True)
     Genre = models.ManyToManyField(Genre,blank = True,related_name = 'Genres')
 

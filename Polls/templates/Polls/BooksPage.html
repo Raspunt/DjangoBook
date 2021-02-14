@@ -1,31 +1,37 @@
 {% extends 'Polls/Blocks/BaseBlock.html' %}
 
-
-
 {% block title %}
  BookPage
 {% endblock %}
-
-
 
 {% block content %}
 
 <h1>Книги</h1>
 
-
-
-
 {% for book in books %}
 
 <div class = 'contentBar'>
-    <div>
-    <p>{{ book.title }}</p>
-    <p>{{ book.Author }}</p>
+
+    <div class = "contentDiv">
+    <p class = "BookPageP">{{ book.title }}</p>
+
+    {% for author in book.Author.all  %}
+        <p class = "BookPageP">{{ author }} </p>
+    {% endfor %}
+
+
     </div>
+
 
     {% if book.image %}
     <img class = "BookImage" src="{{ book.image.url}}" >
     {% endif %}
+
+      <div class="slugButton">
+        <a class = " btn btn-info" href="{{book.slug}}">Подробнее</a>
+        <a class = " btn btn-danger" href="{{book.slug}}/del">Удалить</a>
+        <a class = "btn btn-success" href="{{book.id}}/update">Обновить</a>
+      </div>
 
 </div>
 

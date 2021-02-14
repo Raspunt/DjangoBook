@@ -1,0 +1,30 @@
+{% extends 'Polls/Blocks/BaseBlock.html' %}
+
+
+{% block title %}
+  {{ book.title }} -  {{ block.super }}
+{% endblock %}
+
+
+
+{% block content %}
+
+<h1>Книга {{ book.title }}</h1>
+<div class = "contentBar">
+
+  {% if book.image %}
+  <img class = "BookImageDetai" src="{{ book.image.url}}" >
+  {% endif %}
+
+  <p> {{ book.description }}</p>
+    {% for author in  book.Author.all %}
+        <p>{{ author }}</p>
+    {% endfor %}
+
+
+</div>
+
+
+
+
+{% endblock %}
