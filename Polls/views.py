@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.views.generic import UpdateView
+from django.views.generic import UpdateView,CreateView
 from . models import *
 from  .forms import BookForm
 
@@ -46,4 +46,11 @@ class UpdateBookView(UpdateView):
     form_class = BookForm
     template_name = "Polls/BookUpdate.html"
     # fields = ['title','Author','description','slug','image','Genre']
+    success_url = '/Book'
+
+
+class CreateBookView(CreateView):
+    model = Book
+    form_class = BookForm
+    template_name = "Polls/BookUpdate.html"
     success_url = '/Book'

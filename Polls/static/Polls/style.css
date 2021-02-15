@@ -68,6 +68,12 @@ body {
 
 
 
+.createBook {
+  float: right;
+}
+
+
+
 
 .slugButton {
   float: right;
