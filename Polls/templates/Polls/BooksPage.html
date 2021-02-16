@@ -6,7 +6,11 @@
 
 {% block content %}
 
+  <a class = "btn btn-primary CreateBookUrl" href="{% url 'createViewUrl' %}">Создать книгу</a>
 <h1>Книги</h1>
+
+
+
 
 {% for book in books %}
 

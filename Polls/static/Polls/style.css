@@ -53,6 +53,8 @@ body {
     font-style: italic;
 }
 
+
+
 .BookImage {
     height: 100px;
     width: 100px;
@@ -68,8 +70,9 @@ body {
 
 
 
-.createBook {
+.CreateBookUrl {
   float: right;
+  margin-top:15px;
 }
 
 

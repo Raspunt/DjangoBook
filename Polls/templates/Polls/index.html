@@ -4,9 +4,14 @@
 
 {% block content %}
 
+
+
+<h1>Жанры книг:</h1>
+
 {% for genre in genres %}
 
-  <a href="{{ genre.get_absolute_url }}"><h1>{{genre.title}}</h1></a>
+  <a class = "btn btn-warning float-left ml-3 mt-3"  href="{{ genre.get_absolute_url }}"><h1>{{genre.title}}</h1></a>
+
 
 
 {% endfor %}

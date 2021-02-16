@@ -16,7 +16,8 @@
   <img class = "BookImageDetai" src="{{ book.image.url}}" >
   {% endif %}
 
-  <p> {{ book.description }}</p>
+  <p>Описание:{{ book.description }}</p>
+  <p>Автор:</p>
     {% for author in  book.Author.all %}
         <p>{{ author }}</p>
     {% endfor %}

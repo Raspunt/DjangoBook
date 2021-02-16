@@ -10,10 +10,16 @@
 {% block content %}
 
   <h1>Книги жанра : {{ genre.title }}</h1>
+  <div class="contentBar">
+
+
 
     {% for gb in genreBook %}
 
     <h1>{{ gb.title }}</h1>
+    <hr>
+
+</div>
 
     {% endfor %}
 

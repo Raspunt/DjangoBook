@@ -52,5 +52,5 @@ class UpdateBookView(UpdateView):
 class CreateBookView(CreateView):
     model = Book
     form_class = BookForm
-    template_name = "Polls/BookUpdate.html"
+    template_name = "Polls/AddBook.html"
     success_url = '/Book'
