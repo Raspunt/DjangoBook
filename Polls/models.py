@@ -39,11 +39,11 @@ class Author(models.Model):
 
 class Book(models.Model):
     title = models.CharField(max_length = 300)
-    Author = models.ManyToManyField(Author,blank = True,related_name = 'authors')
+    Author = models.ManyToManyField(Author,blank = True)
     description = models.TextField(blank = True,db_index = True)
     slug = models.SlugField(null=True,blank = True)
     image  = models.ImageField(blank=True)
-    Genre = models.ManyToManyField(Genre,blank = True,related_name = 'Genres')
+    Genre = models.ManyToManyField(Genre,blank = True)
 
 
 

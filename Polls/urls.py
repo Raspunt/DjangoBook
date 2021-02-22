@@ -12,7 +12,7 @@ urlpatterns = [
     path("Book/<slug:BookSlug>",getCurrentBookPage, name = ""),
     path("Book/<slug:BookSlug>/del/",DeleteBook, name = ""),
     path("Book/<int:pk>/update/",UpdateBookView.as_view(), name = "updateViewUrl"),
-    path("Book/create/",CreateBookView.as_view(), name = "createViewUrl")
+    path("Book/create/",CreateBook, name = "createViewUrl")
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
