@@ -20,10 +20,25 @@ body {
     padding: 30px;
 }
 
+.CartImg {
+  height: 200px;
+  width: 200px;
+}
+
 .header a:hover{
     background-color: #333;
     color: white;
 }
+
+.NavigSpan{
+  color: white;
+  padding: 30px;
+}
+
+.NavigSpan:hover {
+  background-color: #333;
+}
+
 
 .header li {
     float: left;
@@ -61,11 +76,19 @@ body {
 
 }
 
+.EmptyImagePlace {
+  margin-left: auto;
+  margin-right: auto;
+  width:300px;
+  height:200px;
+  background-color:#646262;
+}
+
 
 .BookImageDetai {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 500px;
+    margin-right: 500px;
 }
 
 

@@ -13,13 +13,31 @@
 
     {% load static %}
     <link rel="stylesheet" type ="text/css" href="{% static '/Polls/style.css' %}">
+    <link rel="stylesheet" type ="text/css" href="{% static '/Polls/leftNavigation.css' %}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
 
+
+
+
+
+
 <ul class="header">
-    <li><a  href="{% url 'HomePage' %}">Home</a></li>
+
+    <li><span class ="NavigSpan"  onclick="openNav()" >Filters</span></li>
+
+    <li><a  href="/">Home</a></li>
     <li><a  href="{% url 'BooksPage' %}">Books</a></li>
+
+
+    <li class = "float-right">
+  <form  action ='' class="form-inline">
+      <input name = "sq" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+ </form>
+
+     </li>
 </ul>
 
 
@@ -32,7 +50,7 @@
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
+<script src="{% static '/Polls/navigation.js' %}" charset="utf-8"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>

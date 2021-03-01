@@ -3,9 +3,39 @@ from django.views.generic import UpdateView,CreateView
 from . models import *
 from . forms import BookForm
 
-def WelcomePage(request):
+def WelcomePage(request,genre_id):
     genres = Genre.objects.all()
-    return render(request,"Polls/index.html",context = {"genres":genres})
+    books = Book.objects.all()
+    authors = Author.objects.all()
+
+
+
+    genre_id = 0
+    sq = request.GET.get('sq')
+
+    if 'genre_id' in request.GET:
+        genre_id = request.GET.get('genre_id')
+
+    if genre_id != None:
+        if int(genre_id) != 0:
+            books = Book.objects.filter(Genre = genre_id)
+        elif sq != None:
+            books = Book.objects.filter(title__contains=sq)
+        else :
+            books = Book.objects.all()
+
+
+
+
+
+
+    print(books)
+    return render(request,"Polls/index.html",context =
+    {
+    "genres":genres,
+    'books':books,
+    'authors':authors
+    })
 
 
 def BooksPage(request):
@@ -61,8 +91,30 @@ class UpdateBookView(UpdateView):
 
 
 
+def FilterObjects(request):
+    genres = Genre.objects.all()
+    authors = Author.objects.all()
+    books = Book.objects.all()
+
+    print(f' это строка {request.POST}\n')
+
+    if request.POST:
+        auth = request.POST.get('aut')
+        genre = request.POST.get('genre')
+
+        if genre != None:
+            books = Book.objects.filter(Genre = genre)
+        if auth != None:
+            books = Book.objects.filter(Author = auth)
 
 
+
+    print(f'лул {books}')
+    return render(request,"Polls/index.html",{
+    'books':books,
+    'authors':authors,
+    'genres':genres,
+    })
 
 
 def CreateBook(request):

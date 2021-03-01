@@ -1,12 +1,15 @@
-from django.urls import path, include
-from django.conf import settings
+from django.urls import path, include , re_path
 from django.conf.urls.static import static
+from django.conf import settings
 
 
 from . views import *
 
 urlpatterns = [
-    path('Wellcome/',WelcomePage , name = "HomePage"),
+
+    re_path(r'^(?P<genre_id>)$',WelcomePage , name = "HomePage"),
+    path('filter/',FilterObjects , name = "FilterObjects"),
+
     path('Book/',BooksPage, name = "BooksPage"),
     path("Genre/<str:slug>",GenreDetail,name = "GenreDetail"),
     path("Book/<slug:BookSlug>",getCurrentBookPage, name = ""),
