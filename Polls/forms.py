@@ -12,6 +12,6 @@ class BookForm(forms.ModelForm):
             'Author': forms.SelectMultiple(attrs={'class':'form-control'}),
             'description': forms.Textarea(attrs={'class':'form-control'}),
             'slug': forms.TextInput(attrs={'class':'form-control'}),
-            'image': forms.ClearableFileInput(attrs={'class':'form-control'}),
+            'image': forms.FileInput(attrs={'class':'form-control'}),
             'Genre': forms.SelectMultiple(attrs={'class':'form-control'}),
         }

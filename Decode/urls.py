@@ -21,4 +21,5 @@ urlpatterns = [
     # path('jet/', include('jet.urls', 'jet')),
     path('admin/', admin.site.urls),
     path('',include('Polls.urls')),
+    path('',include('users.urls'))
 ]

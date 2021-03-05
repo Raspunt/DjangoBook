@@ -1,0 +1,78 @@
+{% extends 'Polls/Blocks/BaseBlock.html' %}
+
+
+{% block title %}
+ Зарегистрировать новый акаунт -  {{ block.super }}
+{% endblock %}
+
+
+
+{% block content %}
+
+  <h1>Зарегистрировать новый акаунт</h1>
+
+  <div class="contentBar">
+
+  <form class="" method="post">
+      {% csrf_token %}
+<div class="row">
+
+<div class="input-group mb-3 col-5">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-default">First Name</span>
+  </div>
+  <input name='firstName'  type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+</div>
+
+<div class="input-group mb-3 col-5">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-default">Last Name</span>
+  </div>
+  <input name = 'LastName' type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+</div>
+
+<div class="input-group mb-3 col-5">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-default">User Name</span>
+  </div>
+  <input name = 'UserName' type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+</div>
+
+
+
+<div class="input-group mb-3 col-5">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-default">email</span>
+  </div>
+  <input name ='email' type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+</div>
+
+<h3 class = 'col-10 text-center bg-danger '>{{ Wrong_Password }}</h3>
+
+<div class="input-group mb-3 col-5">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-default">password</span>
+  </div>
+  <input name = 'password1' type="password" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+</div>
+
+
+<div class="input-group mb-3 col-5">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-default">confirm password</span>
+  </div>
+  <input name =  'password2' type="password" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+</div>
+
+
+
+
+
+</div>
+
+      <button class = 'btn btn-success' type="submit" name="button" value = 'save'>Register</button>
+</form>
+
+  </div>
+
+{% endblock %}

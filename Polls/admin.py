@@ -11,6 +11,13 @@ class BooksAdmin(admin.ModelAdmin):
 
 
 
+class Country_BookAdmin(admin.ModelAdmin):
+    list_filterss = ('tutle','country')
+    filter_horizontal = ('author','books')
+
+
 admin.site.register(Genre)
 admin.site.register(Author)
 admin.site.register(Book,BooksAdmin)
+admin.site.register(Country)
+admin.site.register(Country_Book,Country_BookAdmin)

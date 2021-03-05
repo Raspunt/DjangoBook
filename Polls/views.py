@@ -29,7 +29,7 @@ def WelcomePage(request,genre_id):
 
 
 
-    print(books)
+
     return render(request,"Polls/index.html",context =
     {
     "genres":genres,
@@ -109,7 +109,6 @@ def FilterObjects(request):
 
 
 
-    print(f'лул {books}')
     return render(request,"Polls/index.html",{
     'books':books,
     'authors':authors,

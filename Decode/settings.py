@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Polls',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -125,7 +126,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-
+LOGIN_REDIRECT_URL = "/"
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = (
