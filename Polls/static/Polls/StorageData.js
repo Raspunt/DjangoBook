@@ -3,29 +3,61 @@ const MyParams = new URLSearchParams(window.location.search)
 const queryUrl = window.location.pathname
 
 
-let paramText = localStorage.getItem('countRefresh')
-let sq = localStorage.getItem('sq')
-let genre_id = localStorage.getItem('genre_id')
-
-
-console.log(sq);
-console.log(MyParams.get('genre_id') != null);
-
-console.log(paramText);
+let  genreId = localStorage.getItem('genreId')
+let AuthorId = localStorage.getItem('authorId')
 
 
 
 
+sq = localStorage.setItem('SearchPar', MyParams.get('sq'))
+checkB = localStorage.setItem('checkB',MyParams.get('checkFilter'))
 
 
 
 
-if (queryUrl == '/filter/' && MyParams.get('sq') != null  ){
-    window.location.href = '/';
-    localStorage.setItem('sq',MyParams.get('sq'));
-    queryUrl = '/'
-} else if (queryUrl == '/' && MyParams.get('sq') == null){
-    window.location.search = `?sq=${sq}`
-    console.log("log  ебучий");
+function setGenre(genre){
+    let check = $(`.filtBtnG${genre}`).prop('checked') 
+
+    if (check){
+        if ( !genreIdArr.includes(genre) ){
+            genreIdArr.push(genre);
+        }
+        
+
+    } else {
+        const index = genreIdArr.indexOf(genre);
+
+        if (index > -1) {
+            genreIdArr.splice(index, 1);
+        }
+
+    }
+    
+genreId = localStorage.setItem('genreId',genreIdArr);
+console.log(check + " " + genreIdArr.indexOf(genre));
 }
+
+function setAuthor(author){
+    let check = $(`.filtBtnA${author}`).prop('checked') 
+
+if (check) {
+    if ( !authorIdArr.includes(author) ){
+        authorIdArr.push(author)
+    }
+
+
+}else {
+    const index = authorIdArr.indexOf(author);
+
+    if (index > -1){
+        authorIdArr.splice(index,1)
+    }
+}
+
+AuthorId = localStorage.setItem('authorId',authorIdArr)
+
+}
+
+
+
 

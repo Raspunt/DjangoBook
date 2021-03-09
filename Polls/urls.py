@@ -9,6 +9,7 @@ urlpatterns = [
 
     re_path(r'^(?P<genre_id>)$',WelcomePage , name = "HomePage"),
     path('filter/',FilterObjects , name = "FilterObjects"),
+    re_path('filterAndSearch/',SearchObjects , name = "SearchObjects"),
 
     path('Book/',BooksPage, name = "BooksPage"),
     path("Genre/<str:slug>",GenreDetail,name = "GenreDetail"),

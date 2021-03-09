@@ -20,21 +20,30 @@
 
 
 
+    
 
 
 
 <ul class="header">
 
-    <li><span class ="NavigSpan"  onclick="openNav()" >Filters</span></li>
+    <li><span class ="NavigSpan"  onclick="openNav();" >Filters</span></li>
 
     <li><a  href="/">Home</a></li>
     <li><a  href="{% url 'BooksPage' %}">Books</a></li>
 
 
     <li class = "float-right">
-  <form  action ='' class="form-inline">
-      <input name = "sq" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  <form  action ='/filterAndSearch/' class="form-inline" onsubmit="MakeParam(); GetParams()">
+
+      <div class="form-check">
+        <input name = 'checkFilter' class="form-check-input filterCheckBox" type="checkbox" value="1"   id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+          Use Filter?
+        </label>
+      </div>
+        
+      <input name = "sq" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id = "searchVal">
+      <button  class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
  </form>
 
      </li>
@@ -52,6 +61,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="{% static '/Polls/navigation.js' %}" charset="utf-8"></script>
 <script src="{% static '/Polls/StorageData.js' %}" charset="utf-8"></script>
+<script src="{% static '/Polls/makeQuery.js' %}" charset="utf-8"></script>
+
+
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>

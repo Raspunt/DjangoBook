@@ -19,11 +19,8 @@ def WelcomePage(request,genre_id):
     if genre_id != None:
         if int(genre_id) != 0:
             books = Book.objects.filter(Genre = genre_id)
-        elif sq != None:
-            books = Book.objects.filter(title__contains=sq)
         else :
             books = Book.objects.all()
-
 
 
 
@@ -90,6 +87,24 @@ class UpdateBookView(UpdateView):
 #     success_url = '/Book'
 
 
+def SearchObjects(request):
+    genres = Genre.objects.all()
+    authors = Author.objects.all()
+    books = Book.objects.all()
+
+    print(request.GET)
+    
+    return render(request,"Polls/index.html",
+    {
+    'books':books,
+    'authors':authors,
+    'genres':genres,
+    })
+
+
+
+
+
 
 def FilterObjects(request):
     genres = Genre.objects.all()
@@ -109,7 +124,8 @@ def FilterObjects(request):
 
 
 
-    return render(request,"Polls/index.html",{
+    return render(request,"Polls/index.html",
+    {
     'books':books,
     'authors':authors,
     'genres':genres,
